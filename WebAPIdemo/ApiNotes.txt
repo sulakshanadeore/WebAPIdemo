@@ -84,6 +84,8 @@ IF without routeprefix, ie only route attribute is used on actions,
 [Route("findEmp")-------------- findEmp
 [Route("findEmp\{id}")-------------- findEmp/1
 ---------------------------------------------------------------
+To override RoutePrefix, we use
+ [Route("~/FindEmp/{id}")]
 
 
 
