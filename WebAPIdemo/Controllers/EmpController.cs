@@ -9,6 +9,7 @@ using HelperLibrary;
 using DisconnectedBLL;
 namespace WebAPIdemo.Controllers
 {
+   // [RoutePrefix("MEmp")]
     public class EmpController : ApiController
     {
         // GET api/<controller>
@@ -18,6 +19,7 @@ namespace WebAPIdemo.Controllers
          obj = new EmployeeHelper();
         }
 
+        [Route("GetAllEmps")]
         public List<Employees> GetEmpList()
         {
             //return new string[] { "value1", "value2" };
@@ -33,7 +35,22 @@ namespace WebAPIdemo.Controllers
 
         }
 
+        [Route("FindEmp")]
+        public Employees GetEmployeeDetails()
+        {
+            return new Employees
+            {
+
+
+                EmployeeID = 1,
+                LastName = "Davolio",
+                FirstName = "Nancy",
+                Title = "Sales Representative",
+                BirthDate = new DateTime(1948, 08, 12)
+            };
+            }
         // GET api/<controller>/5
+        [Route("FindEmp/{id}")]
         public Employees GetEmpByID(int id)
         {
             Employee_BAL empbal = new Employee_BAL();
