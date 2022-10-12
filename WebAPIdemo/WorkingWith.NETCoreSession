@@ -1,0 +1,18 @@
+﻿1) Nuget PAckage Manager-->Install Microsoft.AspNetCore.Session
+
+Open StartUp.cs
+2) Configure()----
+app.UseStaticFiles();
+--> app.UseSession();
+
+3) ConfigureServices()
+services.AddSession(options=>options.IdleTimeOut=TimeSpan.FromMinutes(1));
+
+4) Index Action--- Set a Session 
+HttpContext.Session.SetString("userSessionname","Jack");
+HttpContext.Session.SetInt32("age","14");
+
+To get the Session,
+string name=HttpContext.Session.GetString("userSessionname");
+int userage=HttpContext.Session.GetInt32("age");
+
