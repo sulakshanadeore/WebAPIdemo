@@ -87,6 +87,68 @@ IF without routeprefix, ie only route attribute is used on actions,
 To override RoutePrefix, we use
  [Route("~/FindEmp/{id}")]
  ----------------------------------------------------------
+ 	
+	Parameter binding
+
+1) created a web api
+2) send the data---- Request body
+                      Complex Type
+                       Primitive Type
+
+default rules for parameter binding
+-----------------------------------------
+HttpMethod      QueryString                 RequestBody
+
+GET            Primitive Type/complexType          NA
+
+POST           Primitive                    ComplexType 
+
+PUT             Primitive                   Complex Type
+
+DELETE          Primitive/complex     NA
+
+
+
+------------------------------------
+
+ActionParameterType         bindingSource
+
+   Primitive                    QueryString
+   Complex                      RequestBody
+ [FromBody]Primitive            RequestBody
+ [FromBody]Complex              RequestBody
+ [FromUri]complex               QueryString
+
+FromBody--- can be applied only on one parameter primitive
+-------------------------------------------------------------
+Formatters: Request Data Format/Response Data Format
+1) Json
+2) XML
+
+Mediatype(MIME type)----specifies the format of data 
+as type(primitive)/subtype(complex)
+text/html
+text/xml
+application/json
+image/jpeg
+image/png
+image/tiff
+    
+
+
+
+
+
+
+
+
+
+
+
+HTTP client
+
+  
+
 
 
 
