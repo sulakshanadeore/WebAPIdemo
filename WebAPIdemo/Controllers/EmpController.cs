@@ -37,24 +37,24 @@ namespace WebAPIdemo.Controllers
         }
 
         //[Route("~/FindEmp")]
-        public Employees GetEmployeeDetails()
-        {
-            return new Employees
-            {
+        //public Employees GetEmployeeDetails()
+        //{
+        //    return new Employees
+        //    {
 
 
-                EmployeeID = 1,
-                LastName = "Davolio",
-                FirstName = "Nancy",
-                Title = "Sales Representative",
-                BirthDate = new DateTime(1948, 08, 12)
-            };
-        }
-        // GET api/<controller>/5
-        //[Route("~/FindEmp/{id}")]
-        //  [Route("FindEmp/{id:int:min(1)}")]
-        //[Route("FindEmp/{id:int?}")]
-        public Employees GetEmpByID(int id=1)
+        //        EmployeeID = 1,
+        //        LastName = "Davolio",
+        //        FirstName = "Nancy",
+        //        Title = "Sales Representative",
+        //        BirthDate = new DateTime(1948, 08, 12)
+        //    };
+        //}
+        //// GET api/<controller>/5
+        ////[Route("~/FindEmp/{id}")]
+        ////  [Route("FindEmp/{id:int:min(1)}")]
+        ////[Route("FindEmp/{id:int?}")]
+        public Employees Get(int id)
         {
             Employee_BAL empbal = new Employee_BAL();
             empbal=obj.LocateEmployee(id);
